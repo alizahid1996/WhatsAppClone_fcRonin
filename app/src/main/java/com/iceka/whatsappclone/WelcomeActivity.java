@@ -30,22 +30,26 @@ public class WelcomeActivity extends AppCompatActivity {
 
         mBtAgreeTos.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(WelcomeActivity.this, InputPhoneNumberActivity.class);
-                startActivity(intent);
-                finish();
+            public void onClick(View v) {
+                if (mFirebaseAuth.getCurrentUser() != null) {
+                    onAuthSuccess();
+                }
+                else
+                {
+                    Intent intent = new Intent(WelcomeActivity.this, InputPhoneNumberActivity.class);
+                    startActivity(intent);
+                    finish();
+                }
             }
         });
 
     }
 
-    @Override
+        @Override
     protected void onStart() {
         super.onStart();
         // check if already authenticated
-        if (mFirebaseAuth.getCurrentUser() != null) {
-            onAuthSuccess();
-        }
+
     }
 
     private void onAuthSuccess() {

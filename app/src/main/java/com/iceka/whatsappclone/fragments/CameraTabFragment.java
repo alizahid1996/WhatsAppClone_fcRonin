@@ -35,6 +35,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.iceka.whatsappclone.EditStatusActivity;
+import com.iceka.whatsappclone.MainActivity;
 import com.iceka.whatsappclone.R;
 import com.iceka.whatsappclone.adapters.GalleryAdapter;
 import com.iceka.whatsappclone.utils.RunTimePermissions;
